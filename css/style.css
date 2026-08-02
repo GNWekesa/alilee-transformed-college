@@ -16,3 +16,20 @@ section{
 img{
     max-width:100%;
 }
+/* Footer */
+
+footer a {
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: #FFC107 !important;
+    text-decoration: none;
+}
+
+footer .bi-facebook:hover,
+footer .bi-instagram:hover,
+footer .bi-tiktok:hover,
+footer .bi-whatsapp:hover {
+    transform: translateY(-4px);
+}
