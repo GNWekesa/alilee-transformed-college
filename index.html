@@ -28,56 +28,76 @@
     <div id="navbar"></div>
 
 
-    <!-- Hero goes here -->
-     <section id="home" class="bg-primary text-white py-5">
-    <div class="container py-5">
+  <section id="home">
 
-        <div class="row align-items-center g-5">
+    <div class="container-fluid p-0">
 
-            <div class="col-lg-6">
+        <div class="row g-0 align-items-stretch">
 
-                <h1 class="display-3 fw-bold">
-                    Empowering Entrepreneurs Through Practical Skills
-                </h1>
+            <!-- LEFT -->
 
-                <h3 class="text-warning fw-bold mt-4">
-                    Jiajiri Kwa Kujitengenezea
-                </h3>
+            <div class="col-lg-6 hero-left hero-content">
 
-                <p class="lead mt-4">
-                    Alilee Transformed equips aspiring entrepreneurs with practical DIY
-                    skills, affordable raw materials, business mentorship, and continuous
-                    support to help them build profitable and sustainable businesses.
-                </p>
+                <div class="p-5 p-lg-5">
 
-                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <h1 class="display-3 fw-bold text-white">
 
-                    <a href="training.html"
-                        class="btn btn-warning btn-lg px-4">
-                        Explore Training Programs
-                    </a>
+                        Empowering Entrepreneurs Through Practical Skills
 
-                    <a href="https://wa.me/254785687846"
-                        target="_blank"
-                        class="btn btn-outline-light btn-lg px-4">
-                        Contact Us
-                    </a>
+                    </h1>
+
+                    <h3 class="text-warning fw-bold mt-4">
+
+                        Jiajiri Kwa Kujitengenezea
+
+                    </h3>
+
+                    <p class="lead text-light mt-4">
+
+                        Alilee Transformed equips aspiring entrepreneurs with
+                        practical DIY skills, affordable raw materials,
+                        business mentorship and continuous support to help
+                        them build profitable and sustainable businesses.
+
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3 mt-5">
+
+                        <a href="training.html"
+                           class="btn btn-warning btn-lg px-4">
+
+                            Explore Training Programs
+
+                        </a>
+
+                        <a href="https://wa.me/254785687846"
+                           target="_blank"
+                           class="btn btn-outline-light btn-lg px-4">
+
+                            Contact Us
+
+                        </a>
+
+                    </div>
 
                 </div>
 
             </div>
 
-            <div class="col-lg-6 text-center">
+            <!-- RIGHT -->
+
+            <div class="col-lg-6 hero-right hero-image">
 
                 <img src="images/training-room.jpg"
-                    class="img-fluid rounded-4 shadow-lg"
-                    alt="Alilee Training">
+                     class="img-fluid w-100"
+                     alt="Training Room">
 
             </div>
 
         </div>
 
     </div>
+
 </section>
 
     <!-- About goes here -->
@@ -660,7 +680,59 @@
     <script src="js/include.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- Scroll Button -->
+<button id="scrollBtn" class="btn btn-primary rounded-circle shadow">
+    <i id="scrollIcon" class="bi bi-arrow-up"></i>
+</button>
 
+<script>
+const scrollBtn = document.getElementById("scrollBtn");
+const scrollIcon = document.getElementById("scrollIcon");
+
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+
+    const nearBottom =
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 50;
+
+    if (nearBottom) {
+        scrollIcon.className = "bi bi-arrow-up";
+    } else {
+        scrollIcon.className = "bi bi-arrow-down";
+    }
+
+});
+
+scrollBtn.addEventListener("click", function () {
+
+    const nearBottom =
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 50;
+
+    if (nearBottom) {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    } else {
+
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+
+    }
+
+});
+</script>
 </body>
 
 </html>

@@ -281,6 +281,31 @@ Quality beads, findings and accessories.
 </div>
 
 
+<div class="carousel-item">
+
+    <img src="images/bristles.png"
+         class="d-block w-100"
+         style="height:600px; object-fit:cover;"
+         alt="Bristles">
+
+    <div class="carousel-caption">
+
+        <h2 class="fw-bold">
+
+            Brush Bristles
+
+        </h2>
+
+        <p>
+
+            High-quality bristles for manufacturing durable scrubbing brushes,
+            cleaning brushes, and other household cleaning products.
+
+        </p>
+
+    </div>
+
+</div>
 
 <div class="carousel-item">
 
@@ -494,6 +519,40 @@ data-bs-slide="next">
 
             </div>
 
+
+            <!-- Brush Making -->
+
+<div class="col-md-6 col-lg-4">
+
+    <div class="card border-0 shadow h-100">
+
+        <div class="card-body p-4">
+
+            <div class="display-5 text-warning mb-3">
+                <i class="bi bi-brush"></i>
+            </div>
+
+            <h4 class="fw-bold">
+
+                Brush Making Materials
+
+            </h4>
+
+            <ul class="text-muted mt-3">
+
+                <li>Bristles</li>
+                <li>Brush Handles</li>
+                <li>Brush Blocks</li>
+                <li>Wire & Staples</li>
+                <li>Adhesives</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
             <!-- POP 
 
             <div class="col-md-6 col-lg-4">
@@ -1139,7 +1198,58 @@ data-bs-slide="next">
     <script src="js/include.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+<!-- Scroll Button -->
+<button id="scrollBtn" class="btn btn-primary rounded-circle shadow">
+    <i id="scrollIcon" class="bi bi-arrow-up"></i>
+</button>
+<script>
+const scrollBtn = document.getElementById("scrollBtn");
+const scrollIcon = document.getElementById("scrollIcon");
 
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+
+    const nearBottom =
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 50;
+
+    if (nearBottom) {
+        scrollIcon.className = "bi bi-arrow-up";
+    } else {
+        scrollIcon.className = "bi bi-arrow-down";
+    }
+
+});
+
+scrollBtn.addEventListener("click", function () {
+
+    const nearBottom =
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 50;
+
+    if (nearBottom) {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    } else {
+
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+
+    }
+
+});
+</script>
 </body>
 
 </html>

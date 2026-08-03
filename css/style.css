@@ -33,3 +33,55 @@ footer .bi-tiktok:hover,
 footer .bi-whatsapp:hover {
     transform: translateY(-4px);
 }
+
+/* Scroll Button */
+
+#scrollBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    display: none;
+    z-index: 9999;
+    background: #001C6C;
+    color: #fff;
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
+
+#scrollBtn:hover {
+    background: #0033cc;
+    transform: translateY(-4px);
+}
+/* Hero Animations */
+.hero-left {
+    background: #001C6C;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 80px;
+}
+
+.hero-right {
+    background: #ffffff;
+    min-height: 650px;
+    display: flex;
+    align-items: stretch;
+}
+
+.hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    animation: slideLeft 1s ease;
+}
+
+.hero-image {
+    animation: slideRight 1s ease;
+}

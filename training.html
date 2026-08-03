@@ -529,6 +529,45 @@
 
 </div>
 
+<!-- SCRUBBING BRUSH MAKING -->
+
+<div class="col-md-6 col-lg-4">
+
+    <div class="card h-100 shadow-sm border-0">
+
+        <img src="images/scrubbing-brush.png"
+             class="card-img-top"
+             alt="Scrubbing Brush Making">
+
+        <div class="card-body">
+
+            <span class="badge bg-warning text-dark mb-3">
+                Household Products
+            </span>
+
+            <h4 class="fw-bold">
+                Scrubbing Brush Making
+            </h4>
+
+            <p>
+                Learn how to manufacture durable scrubbing brushes for household,
+                commercial, and industrial cleaning. Gain practical skills to
+                start a profitable cleaning products business.
+            </p>
+
+            <ul class="list-unstyled small">
+
+                <li>✔ Hands-on Production Training</li>
+                <li>✔ Quality Material Selection</li>
+                <li>✔ Business Startup Guidance</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
 <!-- CHUNKY YARN -->
 
 <div class="col-md-6 col-lg-4">
@@ -772,6 +811,57 @@
         <script src="js/script.js"></script>
     <script src="js/include.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Scroll Button -->
+<button id="scrollBtn" class="btn btn-primary rounded-circle shadow">
+    <i id="scrollIcon" class="bi bi-arrow-up"></i>
+</button>
+<script>
+const scrollBtn = document.getElementById("scrollBtn");
+const scrollIcon = document.getElementById("scrollIcon");
 
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 300) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+
+    const nearBottom =
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 50;
+
+    if (nearBottom) {
+        scrollIcon.className = "bi bi-arrow-up";
+    } else {
+        scrollIcon.className = "bi bi-arrow-down";
+    }
+
+});
+
+scrollBtn.addEventListener("click", function () {
+
+    const nearBottom =
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 50;
+
+    if (nearBottom) {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    } else {
+
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+
+    }
+
+});
+</script>
 </body>
 </html>
